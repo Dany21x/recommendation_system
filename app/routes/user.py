@@ -46,7 +46,7 @@ def get_user(user_id: int, db: Session = Depends(get_db)):
     return user
 
 # update user
-@router.put("/{user_id}", response_model=UserUpdate)
+@router.put("/{user_id}", response_model=UserGet)
 def update_user(user_id: int, user: UserUpdate, db: Session = Depends(get_db)):
     db_user = db.query(User).filter(User.id_user == user_id).first()
     if not db_user:
