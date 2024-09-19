@@ -1,5 +1,6 @@
 from app.database import engine, Base
 import pandas as pd
+import os
 
 files_dict = {
     'categories': 'categories.csv',
@@ -13,7 +14,9 @@ column_name = 'purchase_date'
 
 def import_data(file, table):
 
-    df = pd.read_csv(f'resources/{file}')
+    current_dir = os.path.dirname(os.path.abspath(__file__))  # Esto da la ruta de `populate_data.py`
+    file_path = os.path.join(current_dir, '..', 'resources', file)  # Navega hacia el directorio de resources
+    df = pd.read_csv(file_path)
 
     if column_name in df.columns:
         df[column_name] = pd.to_datetime(df[column_name], format='%d/%m/%Y')
