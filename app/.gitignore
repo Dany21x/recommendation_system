@@ -1,3 +1,5 @@
 populate_data2.py
 .idea
 app/__pycache__/
+**/__pycache__/
+**/*.pyc
