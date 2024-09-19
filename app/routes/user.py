@@ -5,15 +5,20 @@ from app.models.user import User
 from app.schemas.user_preference import UserPreferenceCreate
 from app.models.user_preference import UserPreference
 from app.database import get_db
+from passlib.context import CryptContext
 
 router = APIRouter()
+
+pwd_context = CryptContext(schemes=["bcrypt"], deprecated="auto")
+def get_password_hash(password: str):
+    return pwd_context.hash(password)
 
 # Create user
 @router.post("/", response_model=UserCreate)
 def create_user(user: UserCreate, db: Session = Depends(get_db)):
     print(user)
     print(user.preferences)
-    db_user = User(name=user.name, lastname=user.lastname, email=user.email)
+    db_user = User(name=user.name, lastname=user.lastname, email=user.email, password=get_password_hash(user.password))
     db.add(db_user)
     db.commit()
     db.refresh(db_user)

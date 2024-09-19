@@ -14,6 +14,7 @@ class UserCreate(BaseModel):
     lastname: str
     email: str
     preferences: list[int]
+    password: str
 
 class UserGet(BaseModel):
     name: str

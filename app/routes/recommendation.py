@@ -12,8 +12,9 @@ from app.auth import get_current_user
 
 router = APIRouter()
 
-@router.get("/{user_id}/favorites", response_model=list[RecommendationResponse])
-def get_recommendations(user_id: int, db: Session = Depends(get_db), current_user: User = Depends(get_current_user)):
+@router.get("/{user_id}/favorites", response_model=list[RecommendationResponse],
+             description="Returns list of recommended products according to the preferences")
+def get_recommendations(user_id: int, db: Session = Depends(get_db)):#, current_user: User = Depends(get_current_user)
     preferences = db.query(UserPreference).filter(UserPreference.id_user == user_id).all()
     if not preferences:
         raise HTTPException(status_code=404, detail="The user has no preferences set")
@@ -26,8 +27,9 @@ def get_recommendations(user_id: int, db: Session = Depends(get_db), current_use
 
     return recommended_products
 
-@router.get("/{user_id}/similarity", response_model=list[RecommendationResponse])
-def get_similarity_recommendations(user_id: int, db: Session = Depends(get_db), current_user: User = Depends(get_current_user)):
+@router.get("/{user_id}/similarity", response_model=list[RecommendationResponse],
+             description="Returns list of recommended products according to similar users and product description")
+def get_similarity_recommendations(user_id: int, db: Session = Depends(get_db)): #, current_user: User = Depends(get_current_user)
     purchases_query = db.query(Purchase, Product).join(Product, Purchase.id_product == Product.id_product).all()
     purchases = transform_to_df(purchases_query)
     cohort = segment_customer(purchases)
@@ -42,15 +44,16 @@ def get_similarity_recommendations(user_id: int, db: Session = Depends(get_db), 
     return list(product_recommendation)
 
 
-@router.get("/{user_id}/historic", response_model=list[RecommendationResponse])
+@router.get("/{user_id}/historic", response_model=list[RecommendationResponse],
+             description="Returns list of recommended products according to historical purchase data and preferences")
 def get_recommendations(
     user_id: int,
     price_min: Optional[float] = Query(None, description="Minimum price filter"),
     price_max: Optional[float] = Query(None, description="Maximum price filter"),
     category_ids: Optional[list[int]] = Query(None, description="List of category IDs to filter by"),
-    db: Session = Depends(get_db),
-    current_user: User = Depends(get_current_user)
-):
+    db: Session = Depends(get_db)
+): #, current_user: User = Depends(get_current_user
+
     # Get historic purchases and preferences
     purchases = db.query(Purchase).filter(Purchase.id_user == user_id).all()
     purchased_product_ids = [purchase.id_product for purchase in purchases]

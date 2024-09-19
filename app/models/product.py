@@ -7,7 +7,7 @@ class Product(Base):
     __tablename__ = 'products'
     __table_args__ = {'schema': 'recommendation_system'}
 
-    id_product = Column(Integer, primary_key=True, index=True)
+    id_product = Column(Integer, primary_key=True, index=True, autoincrement=True)
     name = Column(String)
     description = Column(Text)
     price = Column(Float)
