@@ -1,6 +1,5 @@
-from sqlalchemy import Boolean, Column, ForeignKey, Integer, String, Float, Text
+from sqlalchemy import Column, ForeignKey, Integer, String, Float, Text
 from sqlalchemy.orm import relationship
-#from .category import Category
 
 from app.database import Base
 
@@ -13,6 +12,6 @@ class Product(Base):
     description = Column(Text)
     price = Column(Float)
     stock = Column(Integer)
-    id_category = Column(Integer)#, ForeignKey('categories.id_category', ondelete='CASCADE'))
+    id_category = Column(Integer, ForeignKey('recommendation_system.categories.id_category', ondelete='CASCADE'))
     
     category = relationship('Category')

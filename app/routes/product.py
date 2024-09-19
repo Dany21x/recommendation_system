@@ -21,7 +21,7 @@ def get_products(db: Session = Depends(get_db)):
     return db.query(Product).all()
 
 # Get Product by ID
-@router.get("/{product_id}", response_model=ProductCreate)
+@router.get("/{product_id}", response_model=ProductCreate, description="Retrieve a product, filtered by ID.")
 def get_product(product_id: int, db: Session = Depends(get_db)):
     product = db.query(Product).filter(Product.id_product == product_id).first()
     if not product:

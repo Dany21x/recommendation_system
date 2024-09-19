@@ -9,8 +9,9 @@ Es recomendable trabajar con un entorno virtual para manejar las dependencias de
 
 #### En Windows:
 ```bash
-python -m venv env
-.\env\Scripts\activate
+pip install virtualenv
+virtualenv venv
+.\venv\Scripts\activate
 ```
 ### 2. Instalar librerías
 
@@ -21,7 +22,10 @@ pip -r requirements.txt
 
 ### 4. Crear esquema recommendation_system en la base de datos postgres
 
-### 5. En el cmd donde tenemos el entorno virtual activo, ejecutar "uvicorn app.main:app --reload --port 5001"
+### 5. En el cmd donde tenemos el entorno virtual activo, ejecutar 
+```bash
+uvicorn app.main:app --reload --port 5001
+```
 
 ## Acceso a la documentación de la API
 

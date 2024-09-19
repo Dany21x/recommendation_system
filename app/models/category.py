@@ -1,8 +1,4 @@
-from sqlalchemy import Boolean, Column, ForeignKey, Integer, String, Float
-from sqlalchemy.orm import relationship
-#from .user_preference import user_preferences
-#from .product import Product
-#from .user import User
+from sqlalchemy import Column, Integer, String
 
 from app.database import Base
 

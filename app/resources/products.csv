@@ -1,0 +1,60 @@
+id_product,name,description,price,stock,id_category
+1,Wired Headphones,Wired Headphones,154.05050900208764,100,1
+2,USB-C Charging Cable,USB-C Charging Cable,275.5399076850554,100,2
+3,Apple Airpods Headphones,Apple Airpods Headphones,56.41009812094193,100,1
+4,27in FHD Monitor,27in FHD Monitor,176.41090578156516,100,3
+5,Bose SoundSport Headphones,Bose SoundSport Headphones,409.8921436956478,100,1
+6,Lightning Charging Cable,Lightning Charging Cable,369.0590086136116,100,2
+7,ThinkPad Laptop,ThinkPad Laptop,291.9436399798628,100,4
+8,AAA Batteries (4-pack),AAA Batteries (4-pack),222.60825288564152,100,2
+9,AA Batteries (4-pack),AA Batteries (4-pack),263.0393714523934,100,2
+10,Macbook Pro Laptop,Macbook Pro Laptop,116.0724429299021,100,4
+11,iPhone,iPhone,168.6412510769515,100,5
+12,20in Monitor,20in Monitor,444.66295685552575,100,3
+13,34in Ultrawide Monitor,34in Ultrawide Monitor,134.8628158437023,100,3
+14,Vareebadd Phone,Vareebadd Phone,42.20547529117427,100,5
+15,Flatscreen TV,Flatscreen TV,351.39248420567066,100,3
+16,27in 4K Gaming Monitor,27in 4K Gaming Monitor,315.48926129575875,100,3
+17,Google Phone,Google Phone,108.96774989120806,100,5
+18,LG Washing Machine,LG Washing Machine,82.33650342274353,100,6
+19,LG Dryer,LG Dryer,180.2003285506044,100,6
+20,Wireless Bluetooth Speaker,Wireless Bluetooth Speaker,433.2336695072888,100,1
+21,HDMI to USB Adapter,HDMI to USB Adapter,417.38784921053576,100,2
+22,Samsung Galaxy Phone,Samsung Galaxy Phone,35.43989837375011,100,5
+23,Dell XPS Laptop,Dell XPS Laptop,112.20397767133127,100,4
+24,Wireless Mouse,Wireless Mouse,135.38267604891377,100,2
+25,Logitech Mechanical Keyboard,Logitech Mechanical Keyboard,274.6379938205766,100,2
+26,Portable Power Bank 10000mAh,Portable Power Bank 10000mAh,287.4647254100652,100,2
+27,USB-A to Lightning Cable,USB-A to Lightning Cable,488.2033440799999,100,2
+28,Sony Noise-Cancelling Headphones,Sony Noise-Cancelling Headphones,338.0023073059971,100,1
+29,HP Pavilion Desktop,HP Pavilion Desktop,108.51532908280832,100,4
+30,USB-C Hub (5-in-1),USB-C Hub (5-in-1),314.5981382981075,100,2
+31,Apple Watch Series 8,Apple Watch Series 8,396.7016363862191,100,7
+32,Lenovo Yoga 2-in-1 Laptop,Lenovo Yoga 2-in-1 Laptop,91.95179922101842,100,4
+33,Chromecast with Google TV,Chromecast with Google TV,490.5613688176085,100,3
+34,Roku Streaming Stick,Roku Streaming Stick,77.67796792303155,100,3
+35,External SSD Drive 1TB,External SSD Drive 1TB,246.83717470820747,100,2
+36,Wireless Charging Pad,Wireless Charging Pad,394.4774072762436,100,2
+37,Anker Portable Charger 20000mAh,Anker Portable Charger 20000mAh,430.4713700249416,100,2
+38,Gaming Mouse Pad with RGB Lights,Gaming Mouse Pad with RGB Lights,88.83488435073693,100,2
+39,Razer Gaming Mouse,Razer Gaming Mouse,24.241985868155265,100,2
+40,Bose Home Speaker 500,Bose Home Speaker 500,494.8557756292367,100,1
+41,GoPro HERO 10 Action Camera,GoPro HERO 10 Action Camera,178.24601284787576,100,3
+42,Philips Hue Smart Bulbs (4-pack),Philips Hue Smart Bulbs (4-pack),377.9652956770481,100,6
+43,Microsoft Surface Pro Tablet,Microsoft Surface Pro Tablet,187.4364343999231,100,4
+44,Canon DSLR Camera,Canon DSLR Camera,100.87408161379128,100,3
+45,Nintendo Switch Console,Nintendo Switch Console,93.35144344,100,3
+46,Smart WiFi Plug (2-pack),Smart WiFi Plug (2-pack),420.0278443083574,100,6
+47,Samsung Smart TV 55in,Samsung Smart TV 55in,422.06220294593976,100,3
+48,Sony PlayStation 5 Console,Sony PlayStation 5 Console,360.3266589129023,100,3
+49,Oculus Quest 2 VR Headset,Oculus Quest 2 VR Headset,14.176930546942938,100,3
+50,Amazon Echo Dot (4th Gen),Amazon Echo Dot (4th Gen),279.0905441507382,100,6
+51,JBL Portable Bluetooth Speaker,JBL Portable Bluetooth Speaker,47.80020097077277,100,1
+52,Garmin GPS Smartwatch,Garmin GPS Smartwatch,270.7739399452401,100,7
+53,USB-C to HDMI Adapter,USB-C to HDMI Adapter,203.4855626,100,2
+54,Smart Thermostat (Wi-Fi Enabled),Smart Thermostat (Wi-Fi Enabled),280.2299923725189,100,6
+55,Fitbit Charge 5 Fitness Tracker,Fitbit Charge 5 Fitness Tracker,91.27167179394291,100,7
+56,Google Nest Security Camera,Google Nest Security Camera,64.48928648165258,100,6
+57,Apple iPad Pro 12.9in,Apple iPad Pro 12.9in,109.04301373422622,100,4
+58,TP-Link Wi-Fi Range Extender,TP-Link Wi-Fi Range Extender,157.5465041603108,100,3
+59,Seagate 4TB External Hard Drive,Seagate 4TB External Hard Drive,183.1849638853413,100,2

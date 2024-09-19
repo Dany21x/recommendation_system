@@ -1,13 +1,13 @@
 from fastapi import FastAPI
-from app.models.user import User
-from app.models.product import Product
-from app.models.category import Category
-from app.models.user_preference import UserPreference
 from app.routes import user, product, recommendation
 from app.database import Base, engine
+import uvicorn
+from app.services.populate_data import populate_data
 
 # if not exists, Create tables
 Base.metadata.create_all(bind=engine)
+
+#populate_data()
 
 app = FastAPI()
 
@@ -18,4 +18,7 @@ app.include_router(recommendation.router, prefix="/recommendations", tags=["reco
 
 @app.get('/')
 def index():
-    return {'message': 'Welcome!'}
+    return {'message': 'Welcome to recommendation system!'}
+
+if __name__ == "__main__":
+    uvicorn.run(app, host="0.0.0.0", port=8000)
