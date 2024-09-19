@@ -7,7 +7,7 @@ from app.services.populate_data import populate_data
 # if not exists, Create tables
 Base.metadata.create_all(bind=engine)
 
-#populate_data()
+populate_data()
 
 app = FastAPI()
 
