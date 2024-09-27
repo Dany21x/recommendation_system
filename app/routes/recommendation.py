@@ -33,11 +33,19 @@ def get_similarity_recommendations(user_id: int, db: Session = Depends(get_db)):
     purchases_query = db.query(Purchase, Product).join(Product, Purchase.id_product == Product.id_product).all()
     purchases = transform_to_df(purchases_query)
     cohort = segment_customer(purchases)
-    user_segment = cohort[cohort.id_user == user_id].customer_segment.iloc[0]
+
+    id_user_cohort = cohort[cohort.id_user == user_id]
+
+    if not id_user_cohort.empty:
+        user_segment = id_user_cohort.customer_segment.iloc[0]
+    else:
+        user_segment = 'Inactive Customer'
+
+    #get data from same customer_segment
     filtered_data = cohort[cohort['customer_segment'] == user_segment]
     segment = list(set(filtered_data['id_user']))
     df_segment = purchases[purchases['id_user'].isin(segment)]
-    product_ids = generate_recommendations(user_id, df_segment, num_recommendations=5)
+    product_ids = generate_recommendations(user_id, df_segment, 5)
 
     product_recommendation = db.query(Product).filter(Product.id_product.in_(product_ids)).all()
 
@@ -51,7 +59,7 @@ def get_recommendations(
     price_min: Optional[float] = Query(None, description="Minimum price filter"),
     price_max: Optional[float] = Query(None, description="Maximum price filter"),
     category_ids: Optional[list[int]] = Query(None, description="List of category IDs to filter by"),
-    db: Session = Depends(get_db)
+    db: Session = Depends(get_db), current_user: User = Depends(get_current_user)
 ): #, current_user: User = Depends(get_current_user
 
     # Get historic purchases and preferences
